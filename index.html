@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Sound Records</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#16213E">
+<meta name="theme-color" content="#0B2160">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,27 +14,27 @@
 <meta name="apple-mobile-web-app-title" content="Sound Records">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@1,700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --plum:#16213E;
-    --plum-ink:#0D1526;
-    --rose:#3E5C8A;
-    --gold:#AEB9C9;
-    --blush:#F2F4F8;
+    --navy:#0B2160;
+    --navy-ink:#06143A;
+    --blue:#2C4FA8;
+    --silver:#A9B8CF;
+    --bg:#EAF0F6;
     --card:#FFFFFF;
-    --line:#DCE2EC;
+    --line:#D5DFEA;
     --ok:#3E8F5C;
     --warn:#D98B2B;
     --danger:#C6425E;
-    --muted:#6E7A90;
+    --muted:#5F7089;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
-    background:var(--blush);
-    color:var(--plum-ink);
+    background:var(--bg);
+    color:var(--navy-ink);
     font-family:'Inter',system-ui,sans-serif;
     -webkit-font-smoothing:antialiased;
     min-height:100vh;
@@ -43,7 +43,7 @@
     max-width:480px;
     margin:0 auto;
     min-height:100vh;
-    background:var(--blush);
+    background:var(--bg);
     display:flex;
     flex-direction:column;
     position:relative;
@@ -52,7 +52,7 @@
   /* Header */
   .hdr{
     padding:26px 20px 18px;
-    background:linear-gradient(135deg, #101A33 0%, var(--plum) 45%, #2C4570 100%);
+    background:linear-gradient(135deg, #10307F 0%, var(--navy) 45%, #1E3F9A 100%);
     color:#fff;
     border-radius:0 0 28px 28px;
     position:relative;
@@ -64,7 +64,7 @@
     right:-40px; top:-50px;
     width:150px; height:150px;
     border-radius:50%;
-    background:var(--rose);
+    background:var(--blue);
     opacity:.35;
   }
   .hdr::before{
@@ -73,21 +73,28 @@
     right:30px; bottom:-60px;
     width:90px; height:90px;
     border-radius:50%;
-    background:var(--gold);
+    background:var(--silver);
     opacity:.3;
   }
   .hdr-top{display:flex; align-items:center; justify-content:space-between; position:relative; z-index:1;}
-  .brand{
-    font-family:'Sora',sans-serif;
-    font-weight:800;
-    font-size:22px;
-    letter-spacing:.2px;
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand-tile{
+    width:54px; height:54px; border-radius:13px; object-fit:cover; flex-shrink:0;
+    border:1px solid rgba(255,255,255,.4);
+    box-shadow:0 2px 8px rgba(0,0,0,.28);
   }
-  .brand span{color:var(--gold);}
+  .brand-word{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:17px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+  }
   .hdr-sub{
     margin-top:4px;
     font-size:13px;
-    color:#B7C2D6;
+    color:#C5D3EA;
     position:relative; z-index:1;
   }
   .stats-row{
@@ -103,7 +110,7 @@
     padding:10px 12px;
   }
   .stat b{display:block; font-family:'Sora',sans-serif; font-size:20px; font-weight:700;}
-  .stat span{font-size:11.5px; color:#B7C2D6;}
+  .stat span{font-size:11.5px; color:#C5D3EA;}
 
   /* Tabs */
   .tabs{
@@ -112,7 +119,7 @@
     background:#fff;
     border-radius:14px;
     padding:4px;
-    box-shadow:0 2px 10px rgba(22,33,62,.06);
+    box-shadow:0 2px 10px rgba(11,33,96,.06);
     overflow-x:auto;
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
@@ -132,7 +139,7 @@
     transition:background .15s, color .15s;
   }
   .tab.active{
-    background:linear-gradient(120deg, var(--plum), var(--rose));
+    background:linear-gradient(120deg, var(--navy), var(--blue));
     color:#fff;
   }
 
@@ -153,7 +160,7 @@
   .search input{
     border:none; outline:none; flex:1;
     font-family:'Inter',sans-serif; font-size:14px;
-    background:transparent; color:var(--plum-ink);
+    background:transparent; color:var(--navy-ink);
   }
   .search svg{flex-shrink:0;}
 
@@ -169,8 +176,8 @@
   .client-name{font-weight:700; font-size:15px;}
   .client-phone{font-size:12.5px; color:var(--muted); margin-top:2px;}
   .visits-pill{
-    font-size:11px; font-weight:600; color:var(--plum);
-    background:#E3E8F1; padding:3px 9px; border-radius:20px; white-space:nowrap;
+    font-size:11px; font-weight:600; color:var(--navy);
+    background:#DCE6F3; padding:3px 9px; border-radius:20px; white-space:nowrap;
   }
   .client-actions{display:flex; gap:8px; margin-top:12px;}
   .btn-mini{
@@ -182,7 +189,7 @@
     border-radius:10px;
     border:1px solid var(--line);
     background:#fff;
-    color:var(--plum);
+    color:var(--navy);
     cursor:pointer;
     text-decoration:none;
     display:flex; align-items:center; justify-content:center; gap:5px;
@@ -205,7 +212,7 @@
     font-size:13.5px;
     line-height:1.5;
   }
-  .empty b{display:block; color:var(--plum-ink); font-size:15px; margin-bottom:6px; font-family:'Sora',sans-serif;}
+  .empty b{display:block; color:var(--navy-ink); font-size:15px; margin-bottom:6px; font-family:'Sora',sans-serif;}
 
   /* FAB */
   .fab{
@@ -215,10 +222,10 @@
     bottom:22px;
     width:56px; height:56px;
     border-radius:50%;
-    background:linear-gradient(135deg, var(--rose), var(--gold));
+    background:linear-gradient(135deg, var(--blue), var(--silver));
     color:#fff;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 8px 20px rgba(62,92,138,.45);
+    box-shadow:0 8px 20px rgba(44,79,168,.45);
     cursor:pointer;
     border:none;
     z-index:20;
@@ -230,7 +237,7 @@
   /* Form */
   .field{margin-bottom:14px;}
   .field label{
-    display:block; font-size:12.5px; font-weight:600; color:var(--plum-ink);
+    display:block; font-size:12.5px; font-weight:600; color:var(--navy-ink);
     margin-bottom:6px;
   }
   .field input, .field select{
@@ -241,22 +248,22 @@
     font-family:'Inter',sans-serif;
     font-size:14.5px;
     background:#fff;
-    color:var(--plum-ink);
+    color:var(--navy-ink);
   }
-  .field input:focus, .field select:focus{ outline:2px solid var(--rose); outline-offset:1px; }
+  .field input:focus, .field select:focus{ outline:2px solid var(--blue); outline-offset:1px; }
   .row2{display:flex; gap:10px;}
   .row2 .field{flex:1;}
   .helper{font-size:11.5px; color:var(--muted); margin-top:4px;}
   .remaining-box{
-    background:#E3E8F1;
+    background:#DCE6F3;
     border-radius:12px;
     padding:12px 14px;
     display:flex; justify-content:space-between; align-items:center;
     margin-bottom:16px;
   }
-  .remaining-box b{ font-family:'Sora',sans-serif; font-size:19px; color:var(--plum); }
-  .total-box{ background:#FDEAD4; }
-  .total-box b{ color:#B5761F; }
+  .remaining-box b{ font-family:'Sora',sans-serif; font-size:19px; color:var(--navy); }
+  .total-box{ background:#E6ECF5; }
+  .total-box b{ color:#2C4FA8; }
 
   .item-row{
     background:#fff;
@@ -268,7 +275,7 @@
   .item-row-main{ display:flex; gap:6px; align-items:center; }
   .item-row-main select{
     flex:1.6; padding:9px 6px; border-radius:9px; border:1px solid var(--line);
-    font-family:'Inter',sans-serif; font-size:12.5px; background:#fff; color:var(--plum-ink); min-width:0;
+    font-family:'Inter',sans-serif; font-size:12.5px; background:#fff; color:var(--navy-ink); min-width:0;
   }
   .item-row-main .item-qty{
     flex:0 0 40px; padding:9px 4px; border-radius:9px; border:1px solid var(--line);
@@ -294,18 +301,18 @@
     padding:14px;
     border-radius:12px;
     border:none;
-    background:linear-gradient(120deg, var(--plum), #2C4570);
+    background:linear-gradient(120deg, var(--navy), #1E3F9A);
     color:#fff;
     font-family:'Sora',sans-serif;
     font-weight:700;
     font-size:14.5px;
     cursor:pointer;
   }
-  .btn-main.secondary{ background:#fff; color:var(--plum); border:1.5px solid var(--plum); margin-top:8px; }
+  .btn-main.secondary{ background:#fff; color:var(--navy); border:1.5px solid var(--navy); margin-top:8px; }
 
   /* Modal */
   .overlay{
-    position:fixed; inset:0; background:rgba(13,21,38,.45);
+    position:fixed; inset:0; background:rgba(6,20,58,.45);
     display:none; align-items:flex-end; justify-content:center; z-index:30;
   }
   .overlay.show{display:flex;}
@@ -321,7 +328,7 @@
   @keyframes up{ from{transform:translateY(24px); opacity:0;} to{transform:translateY(0); opacity:1;} }
   .sheet-hdr{display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;}
   .sheet-title{font-family:'Sora',sans-serif; font-weight:700; font-size:17px;}
-  .close-x{ background:#E3E8F1; border:none; width:30px; height:30px; border-radius:50%; color:var(--plum); font-size:16px; cursor:pointer; }
+  .close-x{ background:#DCE6F3; border:none; width:30px; height:30px; border-radius:50%; color:var(--navy); font-size:16px; cursor:pointer; }
 
   /* Reminders list */
   .rem-item{
@@ -336,7 +343,7 @@
   .rem-top{display:flex; justify-content:space-between; align-items:flex-start;}
   .rem-name{font-weight:700; font-size:14.5px;}
   .rem-service{font-size:12.5px; color:var(--muted); margin-top:2px;}
-  .rem-amount{font-family:'Sora',sans-serif; font-weight:700; font-size:16px; color:var(--plum);}
+  .rem-amount{font-family:'Sora',sans-serif; font-weight:700; font-size:16px; color:var(--navy);}
   .rem-date{font-size:11.5px; margin-top:8px; font-weight:600;}
   .rem-date.overdue{ color:var(--danger); }
   .rem-date.soon{ color:var(--warn); }
@@ -347,11 +354,11 @@
     font-weight:700;
     font-size:15px;
     margin:4px 0 12px;
-    color:var(--plum-ink);
+    color:var(--navy-ink);
   }
   .toast{
     position:fixed; bottom:90px; left:50%; transform:translateX(-50%);
-    background:var(--plum-ink); color:#fff; padding:10px 18px; border-radius:30px;
+    background:var(--navy-ink); color:#fff; padding:10px 18px; border-radius:30px;
     font-size:13px; z-index:50; opacity:0; pointer-events:none; transition:opacity .2s;
   }
   .toast.show{opacity:1;}
@@ -362,7 +369,7 @@
     flex:1; background:#fff; border:1px solid var(--line); border-radius:14px;
     padding:12px; text-align:center;
   }
-  .ledger-stat b{ display:block; font-family:'Sora',sans-serif; font-size:18px; color:var(--plum); }
+  .ledger-stat b{ display:block; font-family:'Sora',sans-serif; font-size:18px; color:var(--navy); }
   .ledger-stat span{ font-size:11px; color:var(--muted); }
   .ledger-item{
     background:var(--card); border:1px solid var(--line); border-radius:14px;
@@ -373,7 +380,7 @@
   .ledger-name{font-weight:700; font-size:14px; margin-top:2px;}
   .ledger-service{font-size:12px; color:var(--muted); margin-top:1px;}
   .ledger-right{text-align:right; flex-shrink:0;}
-  .ledger-total{font-family:'Sora',sans-serif; font-weight:700; font-size:15px; color:var(--plum);}
+  .ledger-total{font-family:'Sora',sans-serif; font-weight:700; font-size:15px; color:var(--navy);}
   .ledger-sub{font-size:10.5px; color:var(--muted); margin-top:2px;}
   .icon-btn{
     background:none; border:none; color:var(--muted); cursor:pointer;
@@ -406,10 +413,19 @@
   .service-actions button{ background:none; border:none; color:var(--muted); cursor:pointer; font-size:13px; }
   .file-btn{
     display:block; text-align:center; width:100%; padding:12px; border-radius:12px;
-    border:1.5px dashed var(--line); color:var(--plum); font-weight:600; font-size:13px;
-    cursor:pointer; background:#F7F9FC; margin-top:10px;
+    border:1.5px dashed var(--line); color:var(--navy); font-weight:600; font-size:13px;
+    cursor:pointer; background:#F6F9FC; margin-top:10px;
   }
   .ledger-icons{display:flex; gap:6px; justify-content:flex-end; margin-top:6px;}
+
+  /* Elegir contactos */
+  .or-sep{ display:flex; align-items:center; gap:10px; margin:16px 0 14px; color:var(--muted); font-size:11.5px; }
+  .or-sep::before, .or-sep::after{ content:""; flex:1; height:1px; background:var(--line); }
+  #vcfPickerList{ max-height:40vh; overflow-y:auto; border-top:1px solid var(--line); }
+  .contact-row{ display:flex; align-items:center; gap:12px; padding:10px 2px; border-bottom:1px solid var(--line); cursor:pointer; }
+  .contact-row input{ width:18px; height:18px; flex-shrink:0; accent-color:var(--navy); }
+  .contact-name{ font-weight:600; font-size:14px; }
+  .contact-phone{ font-size:12px; color:var(--muted); }
 
   .install-btn{
     background:rgba(255,255,255,.16);
@@ -432,19 +448,19 @@
 <div class="app">
   <div class="hdr">
     <div class="hdr-top">
-      <div class="brand">Sound <span>Records</span></div>
+      <div class="brand"><img class="brand-tile" id="brandTile" alt="SR" src="data:image/jpeg;base64,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"><span class="brand-word">Sound Records</span></div>
       <button class="install-btn" id="installBtn">📲 Instalar app</button>
     </div>
-    <div class="hdr-sub">Clientas, anticipos y recordatorios <span id="syncBadge" style="display:none; margin-left:6px; font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; vertical-align:middle;"></span></div>
+    <div class="hdr-sub">Clientes, anticipos y recordatorios <span id="syncBadge" style="display:none; margin-left:6px; font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; vertical-align:middle;"></span></div>
     <div class="stats-row">
-      <div class="stat"><b id="statClients">0</b><span>Clientas</span></div>
+      <div class="stat"><b id="statClients">0</b><span>Clientes</span></div>
       <div class="stat"><b id="statPending">0</b><span>Pagos pendientes</span></div>
-      <div class="stat"><b id="statOwed">$0</b><span>Por cobrar</span></div>
+      <div class="stat"><b id="statOwed">€0</b><span>Por cobrar</span></div>
     </div>
   </div>
 
   <div class="tabs">
-    <div class="tab active" data-tab="clientes">Clientas</div>
+    <div class="tab active" data-tab="clientes">Clientes</div>
     <div class="tab" data-tab="pago">Pago</div>
     <div class="tab" data-tab="registro">Registro</div>
     <div class="tab" data-tab="tienda">Tienda</div>
@@ -455,7 +471,7 @@
   <!-- CLIENTES -->
   <div class="view active" id="view-clientes">
     <div class="search">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6E7A90" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5F7089" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       <input id="searchClients" placeholder="Buscar por nombre o teléfono">
     </div>
     <div id="clientList"></div>
@@ -464,13 +480,13 @@
   <!-- REGISTRAR PAGO -->
   <div class="view" id="view-pago">
     <div class="field">
-      <label>Clienta</label>
+      <label>Cliente</label>
       <select id="payClientSelect">
-        <option value="">Selecciona una clienta...</option>
+        <option value="">Selecciona un cliente...</option>
       </select>
-      <div class="helper">¿Es nueva? Ve a la pestaña Clientas y agrégala primero, o usa "+ Nueva clienta" abajo.</div>
+      <div class="helper">¿Es nuevo? Ve a la pestaña Clientes y agrégalo primero, o usa "+ Nuevo cliente rápido" abajo.</div>
     </div>
-    <button class="btn-main secondary" id="quickAddBtn" type="button">+ Nueva clienta rápida</button>
+    <button class="btn-main secondary" id="quickAddBtn" type="button">+ Nuevo cliente rápido</button>
 
     <div style="height:16px"></div>
 
@@ -482,7 +498,7 @@
 
     <div class="remaining-box total-box">
       <span>Total de la venta</span>
-      <b id="totalPreview">$0</b>
+      <b id="totalPreview">€0</b>
     </div>
     <div class="field">
       <label>Anticipo recibido</label>
@@ -490,11 +506,11 @@
     </div>
     <div class="remaining-box">
       <span>Resta por cobrar</span>
-      <b id="remainingPreview">$0</b>
+      <b id="remainingPreview">€0</b>
     </div>
     <div class="field">
-      <label>Fecha del servicio</label>
-      <input id="payServiceDate" type="date">
+      <label>Fecha y hora de la sesión o servicio</label>
+      <input id="payServiceDate" type="datetime-local">
     </div>
     <div class="field">
       <label>Recordarme cobrar el ______</label>
@@ -512,8 +528,8 @@
   <!-- REGISTRO DIARIO (LIBRO DE CONTABILIDAD) -->
   <div class="view" id="view-registro">
     <div class="ledger-stats">
-      <div class="ledger-stat"><b id="ledgerToday">$0</b><span>Hoy</span></div>
-      <div class="ledger-stat"><b id="ledgerMonth">$0</b><span>Este mes</span></div>
+      <div class="ledger-stat"><b id="ledgerToday">€0</b><span>Hoy</span></div>
+      <div class="ledger-stat"><b id="ledgerMonth">€0</b><span>Este mes</span></div>
       <div class="ledger-stat"><b id="ledgerCount">0</b><span>Movimientos</span></div>
     </div>
     <button class="btn-main secondary" id="downloadExcelBtn" style="margin-bottom:14px;">Descargar registro en Excel</button>
@@ -524,7 +540,7 @@
   <div class="view" id="view-tienda">
     <div class="ledger-stats">
       <div class="ledger-stat"><b id="storeProductCount">0</b><span>Productos</span></div>
-      <div class="ledger-stat"><b id="storeStockValue">$0</b><span>Valor en stock</span></div>
+      <div class="ledger-stat"><b id="storeStockValue">€0</b><span>Valor en stock</span></div>
       <div class="ledger-stat"><b id="storeLowStock">0</b><span>Con poco stock</span></div>
     </div>
     <div class="settings-block">
@@ -565,14 +581,14 @@
 
     <div class="settings-block">
       <h3>Copia de seguridad</h3>
-      <p>Descarga un archivo con todas tus clientas, servicios, productos y pagos. Guárdalo en un lugar seguro (Drive, correo) por si cambias de celular.</p>
+      <p>Descarga un archivo con todos tus clientes, servicios, productos y pagos. Guárdalo en un lugar seguro (Drive, correo) por si cambias de celular.</p>
       <button class="btn-main" id="downloadBackupBtn">Descargar copia de seguridad</button>
       <label class="file-btn" for="restoreFileInput">Restaurar desde un archivo de respaldo</label>
       <input type="file" id="restoreFileInput" accept="application/json" style="display:none;">
     </div>
   </div>
 
-  <button class="fab" id="fabAdd" title="Nueva clienta">
+  <button class="fab" id="fabAdd" title="Nuevo cliente">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
   </button>
 </div>
@@ -580,19 +596,36 @@
 <div class="overlay" id="overlay">
   <div class="sheet">
     <div class="sheet-hdr">
-      <div class="sheet-title" id="sheetTitle">Nueva clienta</div>
+      <div class="sheet-title" id="sheetTitle">Nuevo cliente</div>
       <button class="close-x" id="sheetClose">✕</button>
     </div>
     <div id="sheetBody">
-      <div class="field">
-        <label>Nombre</label>
-        <input id="newName" placeholder="Nombre de la clienta">
+      <div id="contactPickBlock">
+        <button type="button" class="btn-main secondary" id="pickContactBtn" style="margin-top:0;">📇 Elegir de mis contactos</button>
+        <input type="file" id="vcfInput" accept=".vcf,text/vcard,text/x-vcard,text/directory" style="display:none;">
+        <div class="helper" id="pickContactHelp" style="display:none; margin-top:8px;">Tu navegador no abre la agenda directamente. Comparte el contacto desde tu agenda como archivo .vcf y elígelo aquí.</div>
+        <div class="or-sep"><span>o escríbelo a mano</span></div>
       </div>
-      <div class="field">
-        <label>Teléfono (WhatsApp)</label>
-        <input id="newPhone" placeholder="Ej: 0412-1234567">
+      <div id="manualForm">
+        <div class="field">
+          <label>Nombre</label>
+          <input id="newName" placeholder="Nombre del cliente">
+        </div>
+        <div class="field">
+          <label>Teléfono (WhatsApp)</label>
+          <input id="newPhone" placeholder="Ej: 0412-1234567">
+        </div>
+        <button class="btn-main" id="saveClientBtn">Guardar cliente</button>
       </div>
-      <button class="btn-main" id="saveClientBtn">Guardar clienta</button>
+      <div id="vcfPicker" style="display:none;">
+        <div class="search" style="margin-bottom:10px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5F7089" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input id="vcfSearch" placeholder="Buscar en los contactos">
+        </div>
+        <div id="vcfPickerList"></div>
+        <button type="button" class="btn-main" id="vcfAddSelectedBtn" style="margin-top:12px;">Agregar seleccionados</button>
+        <button type="button" class="btn-main secondary" id="vcfBackBtn">Volver</button>
+      </div>
     </div>
   </div>
 </div>
@@ -604,11 +637,12 @@
       <button class="close-x" id="invoiceClose">✕</button>
     </div>
     <div style="text-align:center;">
-      <canvas id="invoiceCanvas" width="720" height="1040" style="width:100%; max-width:320px; border-radius:14px; box-shadow:0 4px 18px rgba(22,33,62,.18);"></canvas>
+      <canvas id="invoiceCanvas" width="720" height="1040" style="width:100%; max-width:320px; border-radius:14px; box-shadow:0 4px 18px rgba(11,33,96,.18);"></canvas>
     </div>
     <button class="btn-main" id="invoiceShareBtn" style="margin-top:16px;">📤 Enviar imagen por WhatsApp</button>
     <button class="btn-main secondary" id="invoiceDownloadBtn">Descargar factura</button>
     <a class="btn-main secondary" id="invoiceWaLink" style="display:block; text-align:center; text-decoration:none;" target="_blank" rel="noopener">Abrir chat con el texto de la factura</a>
+    <button class="btn-main secondary" id="invoiceCopyPayBtn">📋 Copiar datos de Pago Móvil</button>
     <p class="helper" style="text-align:center; margin-top:10px;">"Enviar imagen" abre el menú para compartir de tu celular con la factura ya adjunta — solo elige WhatsApp y el contacto. Si tu navegador no lo permite, descárgala y adjúntala manualmente.</p>
   </div>
 </div>
@@ -625,26 +659,28 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
 
 // ============================================================
-// SINCRONIZACIÓN EN TIEMPO REAL (Firebase) — CONFIGURA AQUÍ
+// SINCRONIZACIÓN EN TIEMPO REAL (Firebase) — OPCIONAL
 // ------------------------------------------------------------
+// Esta app de Sound Records NO comparte datos con la del Salón
+// Rosel: tiene su propio almacenamiento y viene con la
+// sincronización APAGADA (guarda solo en este celular).
+//
+// Para activarla necesitas un proyecto de Firebase propio:
 // 1. Crea un proyecto gratis en https://console.firebase.google.com
-// 2. Activa "Firestore Database" (modo producción) y "Authentication"
-//    → método "Anónimo".
+// 2. Activa "Firestore Database" y "Authentication" → método "Anónimo".
 // 3. En Configuración del proyecto → tus apps → app web, copia el
 //    objeto de configuración y pégalo reemplazando el de abajo.
-// Si dejas los valores de ejemplo tal cual, la app funciona normal
-// pero SOLO en este celular, sin sincronizar con otros.
 // ============================================================
 const FIREBASE_CONFIG = {
   apiKey: "TU_API_KEY",
   authDomain: "TU_PROYECTO.firebaseapp.com",
   projectId: "TU_PROYECTO",
-  storageBucket: "TU_PROYECTO.appspot.com",
-  messagingSenderId: "TU_SENDER_ID",
-  appId: "TU_APP_ID"
+  storageBucket: "TU_PROYECTO.firebasestorage.app",
+  messagingSenderId: "000000000000",
+  appId: "1:000000000000:web:0000000000000000"
 };
 const SYNC_ENABLED = FIREBASE_CONFIG.apiKey !== "TU_API_KEY";
-const SALON_DOC = ['salones', 'rosel']; // colección/documento compartido
+const SYNC_DOC = ['negocios', 'sound-records']; // colección/documento compartido
 
 let cloudDb = null;
 let cloudReady = false;
@@ -657,26 +693,27 @@ let pendingLocalPush = false;
   // como respaldo automático, con la misma forma de respuesta para no tocar
   // el resto del código.
   if (!window.storage){
+    const NS = 'soundrecords_'; // evita mezclar datos con otras apps del mismo dominio
     window.storage = {
       async get(key){
         try{
-          const v = localStorage.getItem(key);
+          const v = localStorage.getItem(NS + key);
           return v === null ? null : { key, value: v };
         }catch(e){ return null; }
       },
       async set(key, value){
         try{
-          localStorage.setItem(key, value);
+          localStorage.setItem(NS + key, value);
           return { key, value };
         }catch(e){ return null; }
       },
       async delete(key){
-        try{ localStorage.removeItem(key); return { key, deleted: true }; }
+        try{ localStorage.removeItem(NS + key); return { key, deleted: true }; }
         catch(e){ return null; }
       },
       async list(prefix){
         try{
-          const keys = Object.keys(localStorage).filter(k => !prefix || k.startsWith(prefix));
+          const keys = Object.keys(localStorage).filter(k => k.startsWith(NS)).map(k => k.slice(NS.length)).filter(k => !prefix || k.startsWith(prefix));
           return { keys, prefix };
         }catch(e){ return null; }
       }
@@ -719,7 +756,7 @@ let pendingLocalPush = false;
       return;
     }
     try{
-      const ref = doc(cloudDb, ...SALON_DOC);
+      const ref = doc(cloudDb, ...SYNC_DOC);
       await setDoc(ref, {
         clients, payments, services, products,
         updatedAt: new Date().toISOString()
@@ -738,7 +775,7 @@ let pendingLocalPush = false;
       const auth = getAuth(app);
       await signInAnonymously(auth);
       cloudDb = getFirestore(app);
-      const ref = doc(cloudDb, ...SALON_DOC);
+      const ref = doc(cloudDb, ...SYNC_DOC);
       onSnapshot(ref, (snap) => {
         cloudReady = true;
         updateSyncBadge('on');
@@ -773,9 +810,13 @@ let pendingLocalPush = false;
     setTimeout(()=>t.classList.remove('show'), 1800);
   }
 
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  }
+
   function fmtMoney(n){
     n = Number(n) || 0;
-    return '$' + n.toLocaleString('es-VE', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    return '€' + n.toLocaleString('es-VE', {minimumFractionDigits: 2, maximumFractionDigits: 2});
   }
 
   function catalogOptionsHTML(selectedValue){
@@ -809,7 +850,7 @@ let pendingLocalPush = false;
         <button type="button" class="item-remove" title="Quitar">✕</button>
       </div>
       <input class="item-service-custom" placeholder="Nombre del servicio o producto" style="display:${selVal==='__custom__' ? 'block':'none'};" value="${prefill && prefill.customName ? prefill.customName : ''}">
-      <div class="item-row-sub"><span class="item-subtotal">Subtotal: $0</span></div>
+      <div class="item-row-sub"><span class="item-subtotal">Subtotal: €0</span></div>
     `;
     container.appendChild(div);
 
@@ -929,14 +970,92 @@ let pendingLocalPush = false;
   }
 
   function waLink(phone, text){
-    let digits = (phone || '').replace(/\D/g, '');
-    if (digits.startsWith('0')) digits = '58' + digits.slice(1);
+    const raw = (phone || '').trim();
+    let digits = raw.replace(/\D/g, '');
+    if (raw.startsWith('+')) { /* ya trae código de país */ }
+    else if (digits.startsWith('00')) digits = digits.slice(2);
+    else if (digits.startsWith('0')) digits = '58' + digits.slice(1);
     else if (!digits.startsWith('58')) digits = '58' + digits;
     return 'https://wa.me/' + digits + '?text=' + encodeURIComponent(text);
   }
 
-  const SALON_NAME = 'SOUND RECORDS';
-  const SALON_ADDRESS = 'Urb. Aristides Calvanis, Av. principal casa #23, frente al puente que comunica con Las Eugenias';
+  // ------------------------------------------------------------
+  // DATOS DEL NEGOCIO — complétalos cuando quieras.
+  // · Si BUSINESS_ADDRESS está vacío, la factura no muestra dirección.
+  // · Si los datos de Pago Móvil están vacíos, la factura no muestra
+  //   la caja de Pago Móvil ni el botón de copiar datos.
+  // ------------------------------------------------------------
+  const BUSINESS_NAME = 'SOUND RECORDS';
+  const BUSINESS_ADDRESS = 'Urb. Velitas IV, calle 6, casa 21';
+  const PAGO_MOVIL = {
+    banco: 'Banco de Venezuela',
+    ci: '18770174',
+    telefono: '04121046025',
+  };
+  const HAS_PAGO = !!(PAGO_MOVIL.banco && PAGO_MOVIL.ci && PAGO_MOVIL.telefono);
+
+  // ------------------------------------------------------------
+  // TASA BCV (Bs. por 1 €) — se consulta al generar cada factura,
+  // con caché para no depender de internet cada vez y dos fuentes
+  // gratuitas por si una falla.
+  // ------------------------------------------------------------
+  let bcvCache = null; // { rate, fetchedAt }
+
+  async function fetchWithTimeout(url, ms){
+    const controller = new AbortController();
+    const t = setTimeout(() => controller.abort(), ms);
+    try{
+      const res = await fetch(url, { signal: controller.signal });
+      clearTimeout(t);
+      if (!res.ok) throw new Error('bad status');
+      return await res.json();
+    }catch(e){
+      clearTimeout(t);
+      throw e;
+    }
+  }
+
+  async function fetchBCVRate(){
+    // Fuente 1
+    try{
+      const data = await fetchWithTimeout('https://bcv-api-ashy.vercel.app/api/tasa', 4000);
+      const rate = parseFloat(data?.bcv?.eur);
+      if (rate > 0) return rate;
+    }catch(e){ /* seguimos con la siguiente fuente */ }
+    // Fuente 2
+    try{
+      const data = await fetchWithTimeout('https://thehermit007.github.io/Quadra_API/data.json', 4000);
+      const rate = parseFloat(data?.rates?.EUR);
+      if (rate > 0) return rate;
+    }catch(e){ /* sin suerte tampoco */ }
+    return null;
+  }
+
+  async function getBCVRate(){
+    const now = Date.now();
+    if (bcvCache && (now - bcvCache.fetchedAt) < 6 * 60 * 60 * 1000){
+      return bcvCache; // reutiliza si se pidió hace menos de 6 horas
+    }
+    const rate = await fetchBCVRate();
+    if (rate){
+      bcvCache = { rate, fetchedAt: now };
+      try{ await window.storage.set('bcvRateCache', JSON.stringify(bcvCache), false); }catch(e){}
+      return bcvCache;
+    }
+    // Sin internet o las dos fuentes fallaron: usa el último valor guardado.
+    if (!bcvCache){
+      try{
+        const stored = await window.storage.get('bcvRateCache', false);
+        if (stored) bcvCache = JSON.parse(stored.value);
+      }catch(e){}
+    }
+    return bcvCache;
+  }
+
+  function fmtBs(n){
+    n = Number(n) || 0;
+    return 'Bs. ' + n.toLocaleString('es-VE', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  }
 
   function wrapCanvasText(ctx, text, x, y, maxWidth, lineHeight, align){
     const words = text.split(' ');
@@ -959,10 +1078,25 @@ let pendingLocalPush = false;
     return lines.length * lineHeight;
   }
 
+  let logoImgPromise = null;
+  function loadLogo(){
+    if (!logoImgPromise){
+      logoImgPromise = new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => resolve(null);
+        img.src = $('brandTile').src;
+      });
+    }
+    return logoImgPromise;
+  }
+
   async function drawInvoice(payment, client){
     const canvas = $('invoiceCanvas');
     const items = paymentItems(payment);
-    canvas.height = 900 + Math.max(items.length - 1, 0) * 40;
+    const bcv = await getBCVRate();
+    const bandH = BUSINESS_ADDRESS ? 300 : 236;
+    canvas.height = 900 + (bandH - 240) + Math.max(items.length - 1, 0) * 40 + (bcv ? 55 : 0) + (HAS_PAGO ? 190 : 0);
     const ctx = canvas.getContext('2d');
     const W = canvas.width, H = canvas.height;
 
@@ -973,76 +1107,94 @@ let pendingLocalPush = false;
         document.fonts.load('400 22px Inter'),
         document.fonts.load('600 22px Inter'),
         document.fonts.load('700 46px Sora'),
+        document.fonts.load('italic 700 34px "Libre Baskerville"'),
       ]);
     }catch(e){ /* fonts best-effort */ }
+    const logoImg = await loadLogo();
 
     // Background
-    ctx.fillStyle = '#FBFCFE';
+    ctx.fillStyle = '#FAFCFE';
     ctx.fillRect(0, 0, W, H);
 
     // Header band
-    ctx.fillStyle = '#16213E';
-    ctx.fillRect(0, 0, W, 240);
+    ctx.save();
+    ctx.beginPath(); ctx.rect(0, 0, W, bandH); ctx.clip();
+    ctx.fillStyle = '#0B2160';
+    ctx.fillRect(0, 0, W, bandH);
     ctx.beginPath(); ctx.arc(W - 60, 10, 110, 0, Math.PI*2);
-    ctx.fillStyle = 'rgba(62,92,138,.35)'; ctx.fill();
-    ctx.beginPath(); ctx.arc(60, 230, 70, 0, Math.PI*2);
-    ctx.fillStyle = 'rgba(174,185,201,.35)'; ctx.fill();
+    ctx.fillStyle = 'rgba(44,79,168,.45)'; ctx.fill();
+    ctx.beginPath(); ctx.arc(60, bandH - 10, 70, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(169,184,207,.25)'; ctx.fill();
+    ctx.restore();
 
+    // Logo (mosaico con el logo SR) + nombre
+    const tile = 132, tx = (W - tile) / 2, ty = 24;
+    if (logoImg){
+      ctx.save();
+      ctx.beginPath();
+      if (ctx.roundRect) ctx.roundRect(tx, ty, tile, tile, 26); else ctx.rect(tx, ty, tile, tile);
+      ctx.clip();
+      ctx.drawImage(logoImg, tx, ty, tile, tile);
+      ctx.restore();
+    }
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = '800 40px Sora, sans-serif';
+    ctx.font = 'italic 700 34px "Libre Baskerville", Georgia, serif';
     ctx.textAlign = 'center';
-    ctx.fillText('SOUND', W/2, 92);
-    ctx.fillStyle = '#3E5C8A';
-    ctx.fillText('RECORDS', W/2, 138);
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
+    ctx.fillText('SOUND RECORDS', W/2, ty + tile + 50);
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
 
-    ctx.fillStyle = '#B7C2D6';
-    ctx.font = '400 20px Inter, sans-serif';
-    wrapCanvasText(ctx, SALON_ADDRESS, W/2, 175, W - 120, 26, 'center');
+    if (BUSINESS_ADDRESS){
+      ctx.fillStyle = '#C5D3EA';
+      ctx.font = '400 20px Inter, sans-serif';
+      wrapCanvasText(ctx, BUSINESS_ADDRESS, W/2, ty + tile + 90, W - 120, 26, 'center');
+    }
 
     // "FACTURA" label
-    let y = 300;
-    ctx.fillStyle = '#16213E';
+    let y = bandH + 60;
+    ctx.fillStyle = '#0B2160';
     ctx.font = '700 30px Sora, sans-serif';
     ctx.textAlign = 'left';
     ctx.fillText('Factura', 60, y);
-    ctx.strokeStyle = '#3E5C8A';
+    ctx.strokeStyle = '#2C4FA8';
     ctx.lineWidth = 4;
     ctx.beginPath(); ctx.moveTo(60, y+14); ctx.lineTo(150, y+14); ctx.stroke();
 
-    // Fecha / hora / cliente
+    // Fecha/hora de la cita o servicio, cliente, emisión
     y += 60;
-    ctx.fillStyle = '#6E7A90';
+    const isAppointment = payment.remaining > 0;
+    ctx.fillStyle = '#5F7089';
     ctx.font = '600 20px Inter, sans-serif';
-    ctx.fillText('Fecha del servicio', 60, y);
-    ctx.fillStyle = '#0D1526';
-    ctx.font = '600 24px Inter, sans-serif';
+    ctx.fillText(isAppointment ? '📅 Sesión agendada' : 'Fecha y hora del servicio', 60, y);
+    ctx.fillStyle = isAppointment ? '#2C4FA8' : '#06143A';
+    ctx.font = isAppointment ? '700 26px Sora, sans-serif' : '600 24px Inter, sans-serif';
     ctx.textAlign = 'right';
-    ctx.fillText(formatDate(payment.serviceDate), W - 60, y);
+    ctx.fillText(formatDateTime(payment.serviceDate), W - 60, y);
 
     y += 42;
     ctx.textAlign = 'left';
-    ctx.fillStyle = '#6E7A90';
-    ctx.font = '600 20px Inter, sans-serif';
-    ctx.fillText('Hora de emisión', 60, y);
-    ctx.fillStyle = '#0D1526';
-    ctx.font = '600 24px Inter, sans-serif';
-    ctx.textAlign = 'right';
-    const now = new Date();
-    ctx.fillText(now.toLocaleTimeString('es-VE', {hour:'2-digit', minute:'2-digit'}), W - 60, y);
-
-    y += 42;
-    ctx.textAlign = 'left';
-    ctx.fillStyle = '#6E7A90';
+    ctx.fillStyle = '#5F7089';
     ctx.font = '600 20px Inter, sans-serif';
     ctx.fillText('Cliente', 60, y);
-    ctx.fillStyle = '#0D1526';
+    ctx.fillStyle = '#06143A';
     ctx.font = '700 24px Inter, sans-serif';
     ctx.textAlign = 'right';
     ctx.fillText(client.name, W - 60, y);
 
+    y += 42;
+    ctx.textAlign = 'left';
+    ctx.fillStyle = '#5F7089';
+    ctx.font = '600 20px Inter, sans-serif';
+    ctx.fillText('Factura emitida el', 60, y);
+    ctx.fillStyle = '#06143A';
+    ctx.font = '600 20px Inter, sans-serif';
+    ctx.textAlign = 'right';
+    const now = new Date();
+    ctx.fillText(formatDateTime(now.toISOString()), W - 60, y);
+
     // Dashed divider
     y += 34;
-    ctx.strokeStyle = '#DCE2EC';
+    ctx.strokeStyle = '#D5DFEA';
     ctx.setLineDash([8, 8]);
     ctx.lineWidth = 2;
     ctx.beginPath(); ctx.moveTo(60, y); ctx.lineTo(W-60, y); ctx.stroke();
@@ -1053,7 +1205,7 @@ let pendingLocalPush = false;
     items.forEach((item, idx) => {
       if (idx > 0) y += 40;
       ctx.textAlign = 'left';
-      ctx.fillStyle = '#0D1526';
+      ctx.fillStyle = '#06143A';
       ctx.font = '600 24px Inter, sans-serif';
       ctx.fillText(itemLabel(item), 60, y);
       ctx.textAlign = 'right';
@@ -1063,7 +1215,7 @@ let pendingLocalPush = false;
     if (payment.advance > 0){
       y += 40;
       ctx.textAlign = 'left';
-      ctx.fillStyle = '#6E7A90';
+      ctx.fillStyle = '#5F7089';
       ctx.font = '500 20px Inter, sans-serif';
       ctx.fillText('Anticipo pagado', 60, y);
       ctx.textAlign = 'right';
@@ -1081,55 +1233,117 @@ let pendingLocalPush = false;
 
     // Solid divider
     y += 34;
-    ctx.strokeStyle = '#16213E';
+    ctx.strokeStyle = '#0B2160';
     ctx.lineWidth = 2;
     ctx.beginPath(); ctx.moveTo(60, y); ctx.lineTo(W-60, y); ctx.stroke();
 
     // Total
     y += 60;
     ctx.textAlign = 'left';
-    ctx.fillStyle = '#16213E';
+    ctx.fillStyle = '#0B2160';
     ctx.font = '700 28px Sora, sans-serif';
     ctx.fillText('TOTAL', 60, y);
     ctx.textAlign = 'right';
     ctx.font = '800 44px Sora, sans-serif';
     ctx.fillText(fmtMoney(payment.total), W - 60, y);
 
+    if (bcv){
+      y += 42;
+      ctx.textAlign = 'right';
+      ctx.fillStyle = '#5F7089';
+      ctx.font = '600 22px Inter, sans-serif';
+      ctx.fillText('≈ ' + fmtBs(payment.total * bcv.rate), W - 60, y);
+      ctx.textAlign = 'left';
+      ctx.font = '400 14px Inter, sans-serif';
+      const fecha = new Date(bcv.fetchedAt).toLocaleDateString('es-VE');
+      ctx.fillText(`Tasa BCV: ${bcv.rate.toLocaleString('es-VE',{minimumFractionDigits:2})} Bs/€ (${fecha})`, 60, y);
+    }
+
+    // Caja de Pago Móvil (solo si hay datos configurados)
+    if (HAS_PAGO){
+    y += 55;
+    const boxH = 175;
+    ctx.fillStyle = '#DCE6F3';
+    ctx.beginPath();
+    ctx.roundRect ? ctx.roundRect(60, y, W - 120, boxH, 16) : ctx.rect(60, y, W - 120, boxH);
+    ctx.fill();
+
+    let py = y + 34;
+    ctx.textAlign = 'left';
+    ctx.fillStyle = '#0B2160';
+    ctx.font = '700 20px Sora, sans-serif';
+    ctx.fillText('📱 Pago Móvil', 84, py);
+
+    py += 34;
+    ctx.font = '600 18px Inter, sans-serif';
+    ctx.fillStyle = '#06143A';
+    ctx.fillText(`Banco: ${PAGO_MOVIL.banco}`, 84, py);
+    py += 28;
+    ctx.fillText(`C.I.: ${PAGO_MOVIL.ci}`, 84, py);
+    py += 28;
+    ctx.fillText(`Teléfono: ${PAGO_MOVIL.telefono}`, 84, py);
+    if (bcv){
+      py += 32;
+      ctx.font = '700 20px Inter, sans-serif';
+      ctx.fillStyle = '#0B2160';
+      ctx.fillText(`Monto a pagar: ${fmtBs(payment.total * bcv.rate)}`, 84, py);
+    }
+    y += boxH;
+    }
+
     // Footer
     ctx.textAlign = 'center';
-    ctx.fillStyle = '#6E7A90';
+    ctx.fillStyle = '#5F7089';
     ctx.font = 'italic 400 20px Inter, sans-serif';
-    ctx.fillText('¡Gracias por tu preferencia!', W/2, H - 90);
-    ctx.font = '400 16px Inter, sans-serif';
-    wrapCanvasText(ctx, SALON_ADDRESS, W/2, H - 50, W - 100, 20, 'center');
+    ctx.fillText('¡Gracias por tu preferencia!', W/2, BUSINESS_ADDRESS ? H - 90 : H - 45);
+    if (BUSINESS_ADDRESS){
+      ctx.font = '400 16px Inter, sans-serif';
+      wrapCanvasText(ctx, BUSINESS_ADDRESS, W/2, H - 50, W - 100, 20, 'center');
+    }
   }
 
   function invoiceWhatsAppText(payment, client){
     const items = paymentItems(payment);
-    let msg = `*${SALON_NAME}*\n_${SALON_ADDRESS}_\n\n`;
+    const isAppointment = payment.remaining > 0;
+    let msg = `*${BUSINESS_NAME}*\n` + (BUSINESS_ADDRESS ? `_${BUSINESS_ADDRESS}_\n` : '') + `\n`;
     msg += `🧾 *Factura*\n`;
-    msg += `Fecha: ${formatDate(payment.serviceDate)}\n`;
-    msg += `Hora: ${new Date().toLocaleTimeString('es-VE', {hour:'2-digit', minute:'2-digit'})}\n`;
-    msg += `Cliente: ${client.name}\n\n`;
+    msg += isAppointment
+      ? `📅 *Sesión agendada:* ${formatDateTime(payment.serviceDate)}\n`
+      : `Fecha y hora del servicio: ${formatDateTime(payment.serviceDate)}\n`;
+    msg += `Cliente: ${client.name}\n`;
+    msg += `Factura emitida el: ${formatDateTime(new Date().toISOString())}\n\n`;
     items.forEach(item => {
       msg += `${itemLabel(item)}: ${fmtMoney(item.price * (item.qty||1))}\n`;
     });
     msg += `\nTotal: ${fmtMoney(payment.total)}\n`;
+    if (bcvCache) {
+      msg += `≈ ${fmtBs(payment.total * bcvCache.rate)} (tasa BCV ${bcvCache.rate.toLocaleString('es-VE',{minimumFractionDigits:2})} Bs/€)\n`;
+    }
     if (payment.advance > 0) msg += `Anticipo pagado: ${fmtMoney(payment.advance)}\n`;
     if (payment.remaining > 0) msg += `Saldo restante: ${fmtMoney(payment.remaining)}\n`;
-    msg += `\n¡Gracias por tu preferencia! 💕`;
+    if (HAS_PAGO){
+    msg += `\n📱 *Pago Móvil*\n`;
+    msg += `Banco: ${PAGO_MOVIL.banco}\n`;
+    msg += `C.I.: ${PAGO_MOVIL.ci}\n`;
+    msg += `Teléfono: ${PAGO_MOVIL.telefono}\n`;
+    if (bcvCache){
+      msg += `Monto a pagar: ${fmtBs(payment.total * bcvCache.rate)}\n`;
+    }
+    }
+    msg += `\n¡Gracias por tu preferencia! 🎶`;
     return msg;
   }
 
   async function showInvoice(paymentId){
     const p = payments.find(p => p.id === paymentId);
     if (!p) return;
-    const client = clients.find(c => c.id === p.clientId) || {name:'Clienta', phone:''};
+    const client = clients.find(c => c.id === p.clientId) || {name:'Cliente', phone:''};
     await drawInvoice(p, client);
     const filename = `factura_${client.name.replace(/\s+/g,'_')}_${p.serviceDate}.png`;
 
     $('invoiceWaLink').href = waLink(client.phone, invoiceWhatsAppText(p, client));
     $('invoiceOverlay').classList.add('show');
+    $('invoiceCopyPayBtn').style.display = HAS_PAGO ? '' : 'none';
 
     $('invoiceDownloadBtn').onclick = () => {
       const canvas = $('invoiceCanvas');
@@ -1160,6 +1374,17 @@ let pendingLocalPush = false;
           showToast('Tu navegador no permite compartir la imagen directo. Descárgala y adjúntala en WhatsApp.');
         }
       }, 'image/png');
+    };
+
+    $('invoiceCopyPayBtn').onclick = async () => {
+      let text = `Banco: ${PAGO_MOVIL.banco}\nC.I.: ${PAGO_MOVIL.ci}\nTeléfono: ${PAGO_MOVIL.telefono}`;
+      if (bcvCache) text += `\nMonto: ${fmtBs(p.total * bcvCache.rate)}`;
+      try{
+        await navigator.clipboard.writeText(text);
+        showToast('Datos de Pago Móvil copiados');
+      }catch(e){
+        showToast('No se pudo copiar. Mantén presionado el botón para copiar manualmente.');
+      }
     };
   }
 
@@ -1227,7 +1452,7 @@ let pendingLocalPush = false;
     ).sort((a,b)=> a.name.localeCompare(b.name));
 
     if (filtered.length === 0){
-      list.innerHTML = '<div class="empty"><b>Todavía no hay clientas</b>Toca el botón rosado de abajo para registrar la primera. Solo necesitas su nombre y teléfono, una sola vez.</div>';
+      list.innerHTML = '<div class="empty"><b>Todavía no hay clientes</b>Toca el botón azul de abajo para registrar el primero. Solo necesitas su nombre y teléfono (o elígelo de tus contactos), una sola vez.</div>';
       return;
     }
 
@@ -1236,14 +1461,14 @@ let pendingLocalPush = false;
       const pending = clientPending(c.id);
       const owed = pending.reduce((s,p)=>s+p.remaining,0);
       const msg = owed > 0
-        ? `Hola ${c.name}, te escribo del Sound Records para recordarte que queda un saldo pendiente de ${fmtMoney(owed)}. ¡Gracias!`
-        : `Hola ${c.name}, te escribo del Sound Records. ¿Cómo estás?`;
+        ? `Hola ${c.name}, te escribo de Sound Records para recordarte que queda un saldo pendiente de ${fmtMoney(owed)}. ¡Gracias!`
+        : `Hola ${c.name}, te escribo de Sound Records. ¿Cómo estás?`;
       return `
         <div class="card">
           <div class="client-row">
             <div>
-              <div class="client-name">${c.name}</div>
-              <div class="client-phone">${c.phone || 'Sin teléfono'}</div>
+              <div class="client-name">${esc(c.name)}</div>
+              <div class="client-phone">${esc(c.phone) || 'Sin teléfono'}</div>
             </div>
             <div class="visits-pill">${visits} ${visits===1?'visita':'visitas'}</div>
           </div>
@@ -1253,7 +1478,7 @@ let pendingLocalPush = false;
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 003.7 17.2L2 22l4.9-1.6A11 11 0 1020.5 3.5zM12 20a8 8 0 01-4.1-1.1l-.3-.2-3 1 1-2.9-.2-.3A8 8 0 1112 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.7-1.2-1.5-1.4-1.7-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4-.1-.1-.5-1.3-.7-1.8-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2 1 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.1 1.5-.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1z"/></svg>
               WhatsApp
             </a>
-            <button class="btn-mini" onclick="RoselApp.editClient('${c.id}')">Editar</button>
+            <button class="btn-mini" onclick="SRApp.editClient('${c.id}')">Editar</button>
           </div>
         </div>`;
     }).join('');
@@ -1262,9 +1487,9 @@ let pendingLocalPush = false;
   function renderPaySelect(){
     const sel = $('payClientSelect');
     const current = sel.value;
-    sel.innerHTML = '<option value="">Selecciona una clienta...</option>' +
+    sel.innerHTML = '<option value="">Selecciona un cliente...</option>' +
       clients.slice().sort((a,b)=>a.name.localeCompare(b.name))
-        .map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+        .map(c => `<option value="${c.id}">${esc(c.name)}</option>`).join('');
     sel.value = current;
   }
 
@@ -1281,8 +1506,8 @@ let pendingLocalPush = false;
           <div class="service-price">${fmtMoney(s.price)}</div>
         </div>
         <div class="service-actions">
-          <button onclick="RoselApp.editService('${s.id}')">Editar</button>
-          <button onclick="RoselApp.deleteService('${s.id}')">Eliminar</button>
+          <button onclick="SRApp.editService('${s.id}')">Editar</button>
+          <button onclick="SRApp.deleteService('${s.id}')">Eliminar</button>
         </div>
       </div>
     `).join('');
@@ -1306,8 +1531,8 @@ let pendingLocalPush = false;
             <div class="service-price">${fmtMoney(p.price)} ${stockBadge(p.stock)}</div>
           </div>
           <div class="service-actions">
-            <button onclick="RoselApp.editProduct('${p.id}')">Editar</button>
-            <button onclick="RoselApp.deleteProduct('${p.id}')">Eliminar</button>
+            <button onclick="SRApp.editProduct('${p.id}')">Editar</button>
+            <button onclick="SRApp.deleteProduct('${p.id}')">Eliminar</button>
           </div>
         </div>
       `).join('');
@@ -1327,22 +1552,22 @@ let pendingLocalPush = false;
       list.innerHTML = '<div class="empty"><b>Todavía no hay servicios registrados</b>Cuando registres un pago en la pestaña "Pago", aparecerá aquí tu libro diario.</div>';
     } else {
       list.innerHTML = sorted.map(p => {
-        const client = clients.find(c => c.id === p.clientId) || {name:'Clienta eliminada'};
+        const client = clients.find(c => c.id === p.clientId) || {name:'Cliente eliminado'};
         return `
           <div class="ledger-item">
             <div class="ledger-left">
-              <div class="ledger-date">${formatDate(p.serviceDate)}</div>
-              <div class="ledger-name">${client.name}</div>
+              <div class="ledger-date">${formatDateTime(p.serviceDate)}</div>
+              <div class="ledger-name">${esc(client.name)}</div>
               <div class="ledger-service">${paymentServiceSummary(p)}</div>
             </div>
             <div class="ledger-right">
               <div class="ledger-total">${fmtMoney(p.total)}</div>
               <div class="ledger-sub">${p.remaining > 0 ? 'Debe ' + fmtMoney(p.remaining) : 'Pagado completo'}</div>
               <div class="ledger-icons">
-                <button class="icon-btn" title="Factura" onclick="RoselApp.showInvoice('${p.id}')">
+                <button class="icon-btn" title="Factura" onclick="SRApp.showInvoice('${p.id}')">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l3 3v17H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
                 </button>
-                <button class="icon-btn" title="Eliminar" onclick="RoselApp.deletePayment('${p.id}')">
+                <button class="icon-btn" title="Eliminar" onclick="SRApp.deletePayment('${p.id}')">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2m-9 0l1 14h8l1-14"/></svg>
                 </button>
               </div>
@@ -1353,7 +1578,7 @@ let pendingLocalPush = false;
 
     const todayStr = new Date().toISOString().slice(0,10);
     const monthStr = todayStr.slice(0,7);
-    const todayTotal = payments.filter(p => p.serviceDate === todayStr).reduce((s,p)=>s+p.total,0);
+    const todayTotal = payments.filter(p => (p.serviceDate||'').startsWith(todayStr)).reduce((s,p)=>s+p.total,0);
     const monthTotal = payments.filter(p => (p.serviceDate||'').startsWith(monthStr)).reduce((s,p)=>s+p.total,0);
     $('ledgerToday').textContent = fmtMoney(todayTotal).replace('.00','');
     $('ledgerMonth').textContent = fmtMoney(monthTotal).replace('.00','');
@@ -1373,16 +1598,17 @@ let pendingLocalPush = false;
     const today = new Date().toISOString().slice(0,10);
 
     list.innerHTML = pending.map(p => {
-      const client = clients.find(c => c.id === p.clientId) || {name:'Clienta eliminada', phone:''};
+      const client = clients.find(c => c.id === p.clientId) || {name:'Cliente eliminado', phone:''};
       const overdue = p.reminderDate && p.reminderDate < today;
       const soon = p.reminderDate && !overdue && p.reminderDate <= addDays(today, 3);
-      const msg = `Hola ${client.name}, te escribo del Sound Records para recordarte que queda un saldo pendiente de ${fmtMoney(p.remaining)} por "${paymentServiceSummary(p)}". ¡Gracias!`;
+      const msg = `Hola ${client.name}, te escribo de Sound Records para recordarte que queda un saldo pendiente de ${fmtMoney(p.remaining)} por "${paymentServiceSummary(p)}". ¡Gracias!`;
       return `
         <div class="rem-item ${overdue ? 'overdue':''}">
           <div class="rem-top">
             <div>
-              <div class="rem-name">${client.name}</div>
+              <div class="rem-name">${esc(client.name)}</div>
               <div class="rem-service">${paymentServiceSummary(p)}</div>
+              <div class="rem-service">📅 ${formatDateTime(p.serviceDate)}</div>
             </div>
             <div class="rem-amount">${fmtMoney(p.remaining)}</div>
           </div>
@@ -1391,8 +1617,8 @@ let pendingLocalPush = false;
           </div>
           <div class="rem-actions">
             <a class="btn-mini wa" href="${waLink(client.phone, msg)}" target="_blank" rel="noopener">Recordar por WhatsApp</a>
-            <button class="btn-mini" onclick="RoselApp.showInvoice('${p.id}')">Factura</button>
-            <button class="btn-mini" onclick="RoselApp.markPaid('${p.id}')">Marcar cobrado</button>
+            <button class="btn-mini" onclick="SRApp.showInvoice('${p.id}')">Factura</button>
+            <button class="btn-mini" onclick="SRApp.markPaid('${p.id}')">Marcar cobrado</button>
           </div>
         </div>`;
     }).join('');
@@ -1404,8 +1630,18 @@ let pendingLocalPush = false;
     return d.toISOString().slice(0,10);
   }
   function formatDate(dateStr){
-    const d = new Date(dateStr + 'T00:00:00');
+    const datePart = (dateStr || '').split('T')[0];
+    const d = new Date(datePart + 'T00:00:00');
     return d.toLocaleDateString('es-VE', {day:'numeric', month:'short'});
+  }
+  function formatDateTime(dateStr){
+    if (!dateStr) return '';
+    const hasTime = dateStr.includes('T');
+    const d = hasTime ? new Date(dateStr) : new Date(dateStr + 'T00:00:00');
+    const datePart = d.toLocaleDateString('es-VE', {day:'numeric', month:'short'});
+    if (!hasTime) return datePart;
+    const timePart = d.toLocaleTimeString('es-VE', {hour:'numeric', minute:'2-digit'});
+    return `${datePart}, ${timePart}`;
   }
 
   function render(){
@@ -1427,12 +1663,135 @@ let pendingLocalPush = false;
     $('remainingPreview').textContent = fmtMoney(rem);
   }
 
+  function showSheetMode(mode){
+    const isForm = mode === 'form';
+    $('manualForm').style.display = isForm ? 'block' : 'none';
+    $('contactPickBlock').style.display = (isForm && !editingClientId) ? 'block' : 'none';
+    $('vcfPicker').style.display = isForm ? 'none' : 'block';
+    $('sheetTitle').textContent = isForm ? (editingClientId ? 'Editar cliente' : 'Nuevo cliente') : 'Elige los contactos';
+  }
+
   function openSheet(mode, client){
     editingClientId = client ? client.id : null;
-    $('sheetTitle').textContent = client ? 'Editar clienta' : 'Nueva clienta';
     $('newName').value = client ? client.name : '';
     $('newPhone').value = client ? client.phone : '';
+    showSheetMode('form');
     $('overlay').classList.add('show');
+  }
+
+  // ------------------------------------------------------------
+  // ELEGIR CLIENTES DESDE LOS CONTACTOS DEL CELULAR
+  // 1) Chrome en Android: abre la agenda directamente (Contact Picker).
+  // 2) Otros navegadores (iPhone, PC): se elige un archivo .vcf.
+  // ------------------------------------------------------------
+  const HAS_CONTACT_PICKER = ('contacts' in navigator) && ('ContactsManager' in window);
+  let vcfContacts = [];
+  let vcfSelected = new Set();
+
+  function cleanText(s){ return String(s || '').replace(/[\u0000-\u001f<>]/g, '').trim(); }
+  function phoneKey(p){ return String(p || '').replace(/\D/g, '').slice(-9); }
+
+  function decodeQP(str){
+    try{
+      const bytes = [];
+      for (let i = 0; i < str.length; i++){
+        const hex = str.substr(i + 1, 2);
+        if (str[i] === '=' && /^[0-9A-Fa-f]{2}$/.test(hex)){ bytes.push(parseInt(hex, 16)); i += 2; }
+        else bytes.push(str.charCodeAt(i) & 0xff);
+      }
+      return new TextDecoder('utf-8').decode(new Uint8Array(bytes));
+    }catch(e){ return str; }
+  }
+
+  function parseVCF(text){
+    const out = [];
+    const unfolded = text.replace(/\r?\n[ \t]/g, '');
+    unfolded.split(/BEGIN:VCARD/i).slice(1).forEach(block => {
+      let name = '', phone = '';
+      block.split(/\r?\n/).forEach(line => {
+        const idx = line.indexOf(':');
+        if (idx < 0) return;
+        const head = line.slice(0, idx).toUpperCase();
+        const key = head.split(';')[0].split('.').pop();
+        let val = line.slice(idx + 1).trim();
+        if (head.includes('QUOTED-PRINTABLE')) val = decodeQP(val);
+        if (key === 'FN' && !name) name = val;
+        else if (key === 'N' && !name){
+          const p = val.split(';');
+          name = ((p[1] || '') + ' ' + (p[0] || '')).trim();
+        }
+        else if (key === 'TEL' && !phone) phone = val.replace(/^tel:/i, '');
+      });
+      name = cleanText(name); phone = cleanText(phone);
+      if (name || phone) out.push({ name, phone });
+    });
+    return out;
+  }
+
+  function fillFromContact(c){
+    const key = phoneKey(c.phone);
+    if (key && clients.some(x => phoneKey(x.phone) === key)){
+      showToast('Ese contacto ya está en tus clientes');
+      return;
+    }
+    showSheetMode('form');
+    $('newName').value = c.name || '';
+    $('newPhone').value = c.phone || '';
+    showToast('Contacto cargado. Revisa y guarda');
+  }
+
+  async function addContactsBulk(list){
+    const existing = new Set(clients.map(c => phoneKey(c.phone)).filter(Boolean));
+    let added = 0, firstId = null;
+    list.forEach((c, i) => {
+      const key = phoneKey(c.phone);
+      if (key && existing.has(key)) return;
+      if (key) existing.add(key);
+      const id = 'c_' + Date.now() + '_' + i;
+      clients.push({ id, name: c.name || c.phone, phone: c.phone || '', createdAt: new Date().toISOString() });
+      if (!firstId) firstId = id;
+      added++;
+    });
+    if (!added){ showToast('Esos contactos ya estaban en tus clientes'); return; }
+    await saveClients();
+    closeSheet();
+    render();
+    if (firstId && quickAddFromPay){
+      $('payClientSelect').value = firstId;
+      quickAddFromPay = false;
+    }
+    showToast(added === 1 ? 'Cliente agregado' : `${added} clientes agregados`);
+  }
+
+  async function pickFromContacts(){
+    if (!HAS_CONTACT_PICKER){ $('vcfInput').click(); return; }
+    try{
+      const picked = await navigator.contacts.select(['name', 'tel'], { multiple: true });
+      if (!picked || !picked.length) return;
+      const list = picked
+        .map(p => ({ name: cleanText((p.name || [])[0]), phone: cleanText((p.tel || [])[0]) }))
+        .filter(c => c.name || c.phone);
+      if (!list.length){ showToast('Esos contactos no tienen nombre ni teléfono'); return; }
+      if (list.length === 1) fillFromContact(list[0]);
+      else await addContactsBulk(list);
+    }catch(e){
+      if (e && e.name === 'AbortError') return;
+      showToast('No se pudo abrir tus contactos');
+    }
+  }
+
+  function renderVcfList(){
+    const q = ($('vcfSearch').value || '').toLowerCase();
+    const rows = [];
+    vcfContacts.forEach((c, i) => {
+      if (q && !((c.name || '').toLowerCase().includes(q) || (c.phone || '').includes(q))) return;
+      rows.push(`<label class="contact-row"><input type="checkbox" data-i="${i}" ${vcfSelected.has(i) ? 'checked' : ''}><div><div class="contact-name">${esc(c.name || c.phone)}</div><div class="contact-phone">${esc(c.phone || 'Sin teléfono')}</div></div></label>`);
+    });
+    $('vcfPickerList').innerHTML = rows.slice(0, 300).join('') || '<p class="helper" style="padding:12px 2px;">No hay contactos con ese texto.</p>';
+    updateVcfCount();
+  }
+  function updateVcfCount(){
+    $('vcfAddSelectedBtn').textContent = vcfSelected.size ? `Agregar seleccionados (${vcfSelected.size})` : 'Agregar seleccionados';
   }
   function closeSheet(){
     $('overlay').classList.remove('show');
@@ -1441,7 +1800,7 @@ let pendingLocalPush = false;
   async function saveClient(){
     const name = $('newName').value.trim();
     const phone = $('newPhone').value.trim();
-    if (!name){ showToast('Escribe el nombre de la clienta'); return; }
+    if (!name){ showToast('Escribe el nombre del cliente'); return; }
     let newId = null;
     if (editingClientId){
       const c = clients.find(c => c.id === editingClientId);
@@ -1457,7 +1816,7 @@ let pendingLocalPush = false;
       $('payClientSelect').value = newId;
       quickAddFromPay = false;
     }
-    showToast('Clienta guardada');
+    showToast('Cliente guardado');
   }
 
   async function savePayment(){
@@ -1468,14 +1827,14 @@ let pendingLocalPush = false;
     const serviceDate = $('payServiceDate').value;
     const reminderDate = $('payReminderDate').value;
 
-    if (!clientId){ showToast('Selecciona una clienta'); return; }
+    if (!clientId){ showToast('Selecciona un cliente'); return; }
     if (items.length === 0){ showToast('Agrega al menos un servicio o producto con su precio'); return; }
 
     const remaining = Math.max(total - advance, 0);
     payments.push({
       id: 'p_' + Date.now(),
       clientId, items, total, advance, remaining,
-      serviceDate: serviceDate || new Date().toISOString().slice(0,10),
+      serviceDate: serviceDate || new Date().toISOString().slice(0,16),
       reminderDate: remaining > 0 ? reminderDate : '',
     });
     await savePayments();
@@ -1584,6 +1943,7 @@ let pendingLocalPush = false;
 
   function downloadBackup(){
     const data = {
+      app: 'sound-records',
       exportedAt: new Date().toISOString(),
       clients, payments, services, products
     };
@@ -1610,6 +1970,7 @@ let pendingLocalPush = false;
           showToast('Ese archivo no parece un respaldo válido');
           return;
         }
+        if (data.app !== 'sound-records' && !confirm('Este respaldo no parece ser de Sound Records (¿es de otra app, como el Salón Rosel?). ¿Restaurarlo de todos modos?')) return;
         if (!confirm('Esto reemplazará los datos actuales de la app con los del archivo. ¿Continuar?')) return;
         clients = data.clients || [];
         payments = data.payments || [];
@@ -1636,9 +1997,10 @@ let pendingLocalPush = false;
     const rows = payments.slice()
       .sort((a,b) => (a.serviceDate||'').localeCompare(b.serviceDate||''))
       .map(p => {
-        const client = clients.find(c => c.id === p.clientId) || { name: 'Clienta eliminada' };
+        const client = clients.find(c => c.id === p.clientId) || { name: 'Cliente eliminado' };
         return {
-          'Fecha': p.serviceDate,
+          'Fecha': (p.serviceDate||'').split('T')[0],
+          'Hora': (p.serviceDate||'').includes('T') ? p.serviceDate.split('T')[1] : '',
           'Cliente': client.name,
           'Servicios / Productos': paymentServiceSummary(p),
           'Total': p.total,
@@ -1651,7 +2013,7 @@ let pendingLocalPush = false;
       return;
     }
     const ws = XLSX.utils.json_to_sheet(rows);
-    ws['!cols'] = [{wch:12},{wch:22},{wch:32},{wch:10},{wch:10},{wch:10}];
+    ws['!cols'] = [{wch:12},{wch:8},{wch:22},{wch:32},{wch:10},{wch:10},{wch:10}];
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Registro Diario');
     const stamp = new Date().toISOString().slice(0,10);
@@ -1681,6 +2043,37 @@ let pendingLocalPush = false;
   $('invoiceClose').addEventListener('click', () => $('invoiceOverlay').classList.remove('show'));
   $('invoiceOverlay').addEventListener('click', (e) => { if (e.target.id === 'invoiceOverlay') $('invoiceOverlay').classList.remove('show'); });
   $('saveClientBtn').addEventListener('click', saveClient);
+  $('pickContactBtn').addEventListener('click', pickFromContacts);
+  if (!HAS_CONTACT_PICKER) $('pickContactHelp').style.display = 'block';
+  $('vcfInput').addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    e.target.value = '';
+    if (!file) return;
+    try{
+      const list = parseVCF(await file.text());
+      if (!list.length){ showToast('No encontré contactos en ese archivo'); return; }
+      if (list.length === 1){ fillFromContact(list[0]); return; }
+      vcfContacts = list;
+      vcfSelected = new Set();
+      $('vcfSearch').value = '';
+      showSheetMode('list');
+      renderVcfList();
+    }catch(err){
+      showToast('No se pudo leer el archivo');
+    }
+  });
+  $('vcfSearch').addEventListener('input', renderVcfList);
+  $('vcfPickerList').addEventListener('change', (e) => {
+    const i = Number(e.target.dataset.i);
+    if (Number.isNaN(i)) return;
+    if (e.target.checked) vcfSelected.add(i); else vcfSelected.delete(i);
+    updateVcfCount();
+  });
+  $('vcfAddSelectedBtn').addEventListener('click', () => {
+    if (!vcfSelected.size){ showToast('Marca al menos un contacto'); return; }
+    addContactsBulk([...vcfSelected].sort((a, b) => a - b).map(i => vcfContacts[i]));
+  });
+  $('vcfBackBtn').addEventListener('click', () => showSheetMode('form'));
   $('savePayBtn').addEventListener('click', savePayment);
   $('searchClients').addEventListener('input', renderClients);
   $('payAdvance').addEventListener('input', updateRemainingPreview);
@@ -1691,7 +2084,7 @@ let pendingLocalPush = false;
   $('downloadExcelBtn').addEventListener('click', downloadExcelLedger);
   $('restoreFileInput').addEventListener('change', (e) => restoreBackup(e.target.files[0]));
 
-  window.RoselApp = { editClient, markPaid, deletePayment, editService, deleteService, editProduct, deleteProduct, showInvoice };
+  window.SRApp = { editClient, markPaid, deletePayment, editService, deleteService, editProduct, deleteProduct, showInvoice };
 
   // Instalación como app (PWA)
   let deferredInstallPrompt = null;
